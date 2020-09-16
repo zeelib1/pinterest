@@ -2,18 +2,21 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/Nav';
-import Post from './Components/Post';
+import Profile from './Components/Profile';
 import Chart from './Components/Chart';
+import cinema from '../src/img/cinema.svg'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
+
   return (
     <Router>
     <div className="App">
     <Nav/>
+    <hr />
     <Switch>
     <Route path="/" exact component={Home}/>
-       <Route path="/post" component={Post}/>
+       <Route path="/profile" component={Profile}/>
        <Route path="/chart" component={Chart}/>
     </Switch>
 
@@ -28,8 +31,44 @@ function App() {
 function Home (){
   return(
       <div className="">
-         <input type="" name="" value="" />
+      
+        <form className="homeForm">
+       <img className="cameraIcon" src={cinema} alt="" />
+         <input type="text" name="" placeholder="Search for a movie" />
          <button type="submit">Submit</button>
+         </form>
+         <div className="gridContainer">
+         <div className="photoOne">
+           <img className="grow"  src="https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL_.jpg"/>
+         </div>
+         <div className="photoTwo">
+           <img className="grow"  src="https://i.ebayimg.com/images/g/1jcAAOSwqkRcPhwS/s-l640.jpg"/>
+         </div>
+         <div className="photoTwo">
+           <img className="grow"  src="https://fffmovieposters.com/wp-content/uploads/74934.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://images-na.ssl-images-amazon.com/images/I/91BT34MLA5L._AC_SY741_.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://i.pinimg.com/originals/ed/0b/86/ed0b862bfb7556f1ac480666eda9610c.png"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://m.media-amazon.com/images/I/71ZNaaf8LDL._AC_SS350_.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://i.pinimg.com/236x/0f/89/13/0f8913bc081d3850d94226f47f126af8.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://images-na.ssl-images-amazon.com/images/I/51zd9L-2iWL._AC_.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://i.ebayimg.com/images/g/nPUAAOSwvx1bt3yD/s-l640.jpg"/>
+         </div>
+         <div>
+           <img className="grow"  src="https://i.pinimg.com/originals/45/1f/ea/451fea66f7255f4842f87a3588e2fb85.jpg"/>
+         </div>
+        </div>
       </div>
   )
 }

@@ -1,0 +1,119 @@
+:root {
+    font-size: calc(0.5em + 1vw);
+    box-sizing: border-box;
+  
+  }
+  
+  
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+
+.chartFlexContainer {
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+
+.chartFlexContainer>h1 {
+    font-weight: lighter;
+    text-align: center;
+}
+
+.itemEven {
+    background-color:#f6f6f5;
+}
+
+.itemOdd{
+    color:#f6f6f5;
+}
+
+.itemOdd span,.bookmarkIcon {color:black}
+
+/* .chartFlexContainer img {
+    margin-right: 4em;
+} */
+
+
+/* .verticalLine {
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    margin: 0 10px;
+    height: 15px;
+} */
+
+.starIcon {
+color: #c39400;
+}
+
+.titleFlexContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+  
+   
+    
+    
+    
+}
+
+
+
+.titleFlexContainer p {
+    color:#136CB2;
+}
+.titleFlexContainer img {
+
+        width: 80px;
+        height: 129px;
+   
+}
+
+.starIconFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.itemFlexContainer {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.itemFlexContainer .releaseYear{
+    color:#968e85;
+}
+
+/* .starIconOutline {
+    margin-left: 1.55em;
+} */
+
+.columnTitleFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+    border-top: 1px solid #9a9289;
+    
+
+}
+
+.columnTitleFlex h4 {
+    font-weight: normal;
+    margin-right: 1.8em;
+}
+
+.bookmarkIcon, .starIcon {
+margin-left: 0.5em;    
+}
+
+

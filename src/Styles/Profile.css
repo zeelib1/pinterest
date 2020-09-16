@@ -1,0 +1,8 @@
+.profileContainer img {
+    height: 20vw;
+    width: 30vw;
+}
+
+.profilePost {
+    border:1px solid grey;
+}
