@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { useFetch } from "../App.js";
 import '..//Styles/Chart.css';
 import { AiFillStar } from "react-icons/ai";
 import {  AiOutlineStar} from "react-icons/ai";
 import { BiBookmarkPlus } from "react-icons/bi";
-
-
 
 
 function Chart (){

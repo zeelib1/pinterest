@@ -1,23 +1,32 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/Nav';
 import Profile from './Components/Profile';
 import Chart from './Components/Chart';
 import cinema from '../src/img/cinema.svg'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+
+export const useFetch = (url, options) => {
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const res = await fetch(url, options);
+          const json = await res.json();
+          setResponse(json);
+        } catch (error) {
+          setError(error);
+        }
+      };
+    fetchData();
+  }, []);
+  return {response, error} ;
+};
 
 function App() {
-
-  const useFetch = (url, options) => {
-    const [response, setResponse] = useState(null);
-    useEffect(async () => {
-        const res = await fetch(url, options);
-        const json = await res.json();
-        setResponse(json);
-    });
-    return response;
-  };
 
   return (
     <Router>
@@ -29,16 +38,16 @@ function App() {
        <Route path="/profile" component={Profile}/>
        <Route path="/chart" component={Chart}/>
     </Switch>
-
-    
-
-        
     </div>
     </Router>
   );
 }
 
 function Home (){
+
+  const [movies, setMovies] = useState(useFetch(
+    'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {}));
+
   return(
       <div className="">
       
