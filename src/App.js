@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/Nav';
@@ -8,6 +8,16 @@ import cinema from '../src/img/cinema.svg'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
+
+  const useFetch = (url, options) => {
+    const [response, setResponse] = useState(null);
+    useEffect(async () => {
+        const res = await fetch(url, options);
+        const json = await res.json();
+        setResponse(json);
+    });
+    return response;
+  };
 
   return (
     <Router>
