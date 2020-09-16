@@ -1,30 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/Nav';
 import Profile from './Components/Profile';
 import Chart from './Components/Chart';
-import cinema from '../src/img/cinema.svg'
+import cinema from '../src/img/cinema.svg';
+import { useFetch } from './Components/Hooks';
 
-
-export const useFetch = (url, options) => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const res = await fetch(url, options);
-          const json = await res.json();
-          setResponse(json);
-        } catch (error) {
-          setError(error);
-        }
-      };
-    fetchData();
-  }, []);
-  return { response, error };
-};
 // Link to asset
 // https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/assets/72UF6pHNFstlykyUHBr1M6?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA
 
@@ -47,9 +30,10 @@ function App() {
 
 function Home (){
 
+
   const movies = useFetch(
     'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {});
-  
+ 
   return(
       <div className="">
       
