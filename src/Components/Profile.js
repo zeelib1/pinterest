@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import { useFetch } from "../App.js";
+import React from 'react';
+import {useFetch}  from './Hooks';
 import '../Styles/Profile.css'
 import { AiFillStar } from "react-icons/ai";
+import { myFunction } from './Hooks';
 
 
 function Profile (){
     const users = useFetch('https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=user',{})
-  console.log(users)
+
     return(
         <div className="profileContainer">
             {users.response ?  
