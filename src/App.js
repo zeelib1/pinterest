@@ -54,7 +54,7 @@ function Home (){
         <form className="homeForm">
        <img className="cameraIcon" src={cinema} alt="" />
          <input type="text" name="" placeholder="Search for a movie" />
-         <button type="submit">Submit</button>
+         <button className="submitButton" type="submit">Submit</button>
          </form>
          <div className="gridContainer">
          <div className="photoOne">

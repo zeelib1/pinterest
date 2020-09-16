@@ -3,6 +3,56 @@
     width: 30vw;
 }
 
+.profileContainer {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.profileContainer h2 {
+    font-weight: 300;
+}
+
 .profilePost {
-    border:1px solid grey;
+    border:1px solid lightgrey;
+    padding: 1em;
+    text-align: justify;
+    line-height: 1.4;
+    margin-top: 0.5em;
+}
+.profilePost h4 {
+    color:#136CB2;
+    display: inline;
+}
+
+.profilePost p {
+    font-weight: 250;
+}
+
+.profileDataTitle {
+    border:2px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding: 0.5em;
+    
+
+}
+
+.profileDataTitle h1 {
+    font-weight: 500;
+}
+
+.favoriteMoviesParagraph {
+    color:black;
+}
+
+.dateJoined {
+    color: grey;
+}
+
+.rating{
+    margin-left: 14em;;
 }
