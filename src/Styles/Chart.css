@@ -69,8 +69,8 @@ color: #c39400;
 }
 .titleFlexContainer img {
 
-        width: 80px;
-        height: 129px;
+        width: calc(200px + 5vw);
+        height: calc(300px + 5vw);
    
 }
 
@@ -114,6 +114,11 @@ color: #c39400;
 
 .bookmarkIcon, .starIcon {
 margin-left: 0.5em;    
+}
+
+.movieTitleFlex {
+    display:flex;
+    justify-content: space-around;
 }
 
 
