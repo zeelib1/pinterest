@@ -5,7 +5,6 @@ import Nav from './Components/Nav';
 import Profile from './Components/Profile';
 import Chart from './Components/Chart';
 import cinema from '../src/img/cinema.svg';
-import { useFetch } from './Components/Hooks';
 
 function App() {
 
@@ -30,27 +29,45 @@ function Home (){
   useEffect(() => {
     fetch('https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post')
       .then((value) => value.json())
-      .then((json) => json)
       .then((result) => {result.items.map((element) => {
         result.includes.Asset.forEach(asset => {
           if (asset.sys.id === element.fields.image.sys.id) {
             element.imgUrl = asset.fields.file.url.slice(2);
             return element;
-          }
-        });
-      })
+          }});
+        })
       setMovies(result);
       })
       .catch((e) => e)
   },[])
+
+  const filterMovies = () => {
+    const input = document.querySelector('.inputField').value;
+    fetch(`https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post&query=${input}`)
+      .then((value) => value.json())
+      .then((result) => {result.items.map((element) => {
+        result.includes.Asset.forEach(asset => {
+          if (asset.sys.id === element.fields.image.sys.id) {
+            element.imgUrl = asset.fields.file.url.slice(2);
+            return element;
+          }});
+        })
+      setMovies(result);
+      })
+      .catch((e) => e)
+
+    document.querySelector('.inputField').value = '';
+    
+
+  }
     
 
   return(
       <div className="">
         <form className="homeForm">
        <img className="cameraIcon" src={cinema} alt="" />
-         <input type="text" name="" placeholder="Search for a movie" />
-         <button className="submitButton" type="submit">Submit</button>
+         <input type="text" name="" placeholder="Search for a movie" className="inputField"/>
+         <button className="submitButton" type="button" onClick={filterMovies}>Submit</button>
          </form>
          <div className="gridContainer">
          {movies ? 
