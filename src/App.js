@@ -55,19 +55,19 @@ function Home (){
       setMovies(result);
       })
       .catch((e) => e)
-
-    document.querySelector('.inputField').value = '';
-    
-
   }
-    
+  
+  const resetMovies = () => {
+    document.querySelector('.inputField').value = "";
+    filterMovies();
+  }
 
   return(
       <div className="">
         <form className="homeForm">
        <img className="cameraIcon" src={cinema} alt="" />
-         <input type="text" name="" placeholder="Search for a movie" className="inputField"/>
-         <button className="submitButton" type="button" onClick={filterMovies}>Submit</button>
+         <input type="text" name="" placeholder="Search for a movie" className="inputField" onChange={filterMovies}/>
+         <button className="submitButton" type="button" onClick={resetMovies}>Reset</button>
          </form>
          <div className="gridContainer">
          {movies ? 
