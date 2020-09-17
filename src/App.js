@@ -33,7 +33,7 @@ function Home (){
 
   const movies = useFetch(
     'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {});
- 
+ console.log(movies)
   return(
       <div className="">
       
@@ -44,10 +44,10 @@ function Home (){
          </form>
          <div className="gridContainer">
           {movies.response ? 
-             movies.response.items.map((element) => {
+             movies.response.includes.Asset.map((element) => {
               return (<div className="photoOne" key={element.sys.id}>
                 <img className="grow"  
-                src="https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL_.jpg" 
+                src={element.fields.file.url} 
                 alt={element.fields.name} />
                 </div>);})
             : null}
