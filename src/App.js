@@ -29,21 +29,28 @@ function App() {
 }
 
 function Home (){
-  const movies = useFetch(
-    'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {});
+  const [movies, setMovies] = useState();
   
   useEffect(() => {
-    if (movies.response) {
-      movies.response.items.map((element) => {
+    fetch('https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post')
+      .then((value) => value.json())
+      .then((json) => json)
+      .then((result) => result.items.map((element) => {
+        console.log(element.fields.image.sys.id);
+        console.log(result.includes);
+        
+      }))
+      .catch((e) => e)
+
+ /*      movies.items.map((element) => {
           fetch(`https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/assets/${element.fields.image.sys.id}?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA`)
             .then((value) => value.json())
             .then((json) => {
               element.imgurl = json.fields.file.url.slice(2);
             })
             .catch((e) => e)
-      })
-  }
-  })
+      })  */
+  },[])
     
 
   return(
@@ -54,16 +61,15 @@ function Home (){
          <button className="submitButton" type="submit">Submit</button>
          </form>
          <div className="gridContainer">
-          {movies.response ? 
-             movies.response.items.map((element) => {
+        {/*  {movies ? 
+             movies.items.map((element) => {
                console.log(element);
-               console.log(element.imgurl);
               return (<div className="photoOne" key={element.sys.id}>
                 <img className="grow"  
                 src={`http://images.ctfassets.net/3jl15wjpl83d/wMsK4RN8ITvve0RJOGBRQ/67ce855894e42d23ec0be9ee11cc5fe3/iyTD2QnySNMPUPE3IedZQipSWfz.jpg`} 
                 alt={element.fields.name} />
-                </div>);})
-            : null}
+                </div>);}) */}
+            : null} 
         </div>
       </div>
   )
