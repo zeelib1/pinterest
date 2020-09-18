@@ -2,12 +2,13 @@ nav {
     margin-top: 0.25em;
     display:flex;
     justify-content: space-around;
-   
+    height: 6vh;
     align-items: center;
     color: white;
     list-style: none;
     text-decoration: none;
     font-size: 2em;
+    
     
     
 }

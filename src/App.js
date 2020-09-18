@@ -35,7 +35,7 @@ function Home (){
     'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {});
  console.log(movies)
   return(
-      <div className="">
+      <div className="parallax" id="backgroundApp">
       
         <form className="homeForm">
        <img className="cameraIcon" src={cinema} alt="" />
@@ -44,8 +44,8 @@ function Home (){
          </form>
          <div className="gridContainer">
           {movies.response ? 
-             movies.response.includes.Asset.map((element) => {
-              return (<div className="photoOne" key={element.sys.id}>
+             movies.response.includes.Asset.map((element, index) => {
+              return (<div className="photo" key={element.sys.id}>
                 <img className="grow"  
                 src={element.fields.file.url} 
                 alt={element.fields.name} />

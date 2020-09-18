@@ -13,7 +13,7 @@ function Nav (){
             </Link>
 
             <Link className="navLink" to='chart'>
-             <li>Ratings</li>
+             <li>Top Rated</li>
             </Link>
             
             

@@ -1,4 +1,11 @@
 
+
+#backgroundApp {
+  /* background-image: linear-gradient(to right,white,indigo,black); */
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+  
+}
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -8,7 +15,13 @@
   
 }
 
+.photo {
+  display: grid;
+}
+
+
 .gridContainer img {
+  
   width: 220px;
   height: 330px;
   border-radius: 10%;
@@ -18,15 +31,17 @@
   justify-content: center;
   gap: 0.75em;
   margin-bottom: 0.30em;
-  margin: 1em;;
+ margin-left: 1em;
+ margin-right: 1.5em;
 }
 
 .homeForm input {
 width: 80vw;
 padding:1em;
-/* margin: 1em; */
+margin: 1em;
 border: 2px solid lightgrey;
 border-radius: 10px;
+
 }
 
 .homeForm button {
@@ -36,6 +51,7 @@ border-radius: 10px;
   color: white;
   padding: 0.5em 2em;
   font-size: 1rem;
+  margin: 1em;
 }
 
 
@@ -45,4 +61,5 @@ border-radius: 10px;
 
  .cameraIcon {
   height: 8vh;
+  margin: 1em;
 } 
