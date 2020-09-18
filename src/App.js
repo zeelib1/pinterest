@@ -62,6 +62,11 @@ function Home (){
     filterMovies();
   }
 
+
+//   const movies = useFetch(
+//     'https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post', {});
+//  console.log(movies)
+
   return(
       <div className="">
         <form className="homeForm">
@@ -70,11 +75,13 @@ function Home (){
          <button className="submitButton" type="button" onClick={resetMovies}>Reset</button>
          </form>
          <div className="gridContainer">
+
          {movies ? 
              movies.items.map((element) => {
               return (<div className="photoOne" key={element.sys.id}>
                 <img className="grow"  
                 src={`http://${element.imgUrl}`} 
+
                 alt={element.fields.name} />
                 </div>);}) 
             : null} 
