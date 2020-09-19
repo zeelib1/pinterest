@@ -78,14 +78,14 @@ function Home (){
 //  console.log(movies)
 
   return(
-      <div className="">
+      <div className="bodyHome">
          <section className="cinemaIntro"> 
-          <p className='scroll' data-rateX='1' data-rateY='0.7'>Cinemagram</p>
+          <p className='scroll special font-effect-anaglyph' data-rateX='1' data-rateY='0.7'>Cinemagram</p>
            <img className='scroll scrollImg' data-rateY='0' data-rateX='0' src='https://image.tmdb.org/t/p/original/rnN9yJfwso6JA64wIPqK1m6K6e1.jpg' style={{}}/>
            <img className='scroll scrollImg' data-rateY='-1' data-rateX='0' src={require('./img/seating.png')} style={{top: '650px', zIndex: '11'}}/>
          </section>
-         <section className='gap scroll' data-rateY='-0.2' data-rateX='0'></section>
-         <section className='library' data-rateY='-1.5' data-rateX='0'>
+         <section className='gap scroll' data-rateY='-0.3' data-rateX='0'></section>
+         <section className='library'>
          <form className="homeForm">
             <img className="cameraIcon" src={cinema} alt="" />
             <input type="text" name="" placeholder="Search for a movie" className="inputField" onChange={filterMovies}/>
