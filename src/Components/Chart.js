@@ -11,7 +11,7 @@ const [ratings, setRatings] = useState({});
    
     useEffect(()=>{
        
-            fetch('https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post')
+            fetch('https://cdn.contentful.com/spaces/3jl15wjpl83d/environments/master/entries?access_token=00cu3XCQpVWs8x8LReew9HvhN2G9ktMpgDHnpN574xA&content_type=post&order=-fields.rating&limit=5')
             .then((value) => value.json())
             .then((result) => {
                 console.log(result)
@@ -32,26 +32,26 @@ console.log(ratings);
     return(
         
 <div className="chartFlexContainer">
-    <h1>Top 5 as Rated by Users</h1>
-   
-    {/* //Movie 1 */}
-    <div className="columnTitleFlex">
-        <h4>Rank</h4>
-        <h4>Title</h4>
-        <h4>Your rating</h4>
-        
 
-    </div>
+    
         
         {ratings.items ?
         
         ratings.items.map((elem, i) => {    
         return (
         <div className="itemFlexContainer itemEven" key={elem.sys.id}>
+         
    
         <div className="titleFlexContainer">
          <div className="itemOne">
-        <span>{i+1}.</span>
+         <div>
+        
+            <p>{elem.fields.name}<span className="releaseYear"> ({elem.fields.year})</span></p>
+              <span><AiFillStar className="starIcon"/> <span style={{color:'lightgrey'}}>{elem.fields.rating}</span></span>
+              <AiOutlineStar className="starIcon"/><BiBookmarkPlus className="bookmarkIcon" style={{color:'lightgrey'}}/>
+          </div>
+     
+        
           <img src= {`http://${elem.img}`} alt="" />
        
         </div>
@@ -61,18 +61,44 @@ console.log(ratings);
         </div>
        
          <div className="starIconsFlex itemTwo">
-         <p>{elem.fields.name}<span className="releaseYear"> ({elem.fields.year})</span></p>
-              <span><AiFillStar className="starIcon"/> {elem.fields.rating}</span>
-              <AiOutlineStar className="starIcon"/><BiBookmarkPlus className="bookmarkIcon"/>
+          
+         
+          <div className="movieDetails">
+          
+          
+
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}  >Director: </span>{elem.fields.director}
+            </p>
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}>Writer: </span>{elem.fields.writer}
+            </p>
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}>Genre: </span>{elem.fields.genre}
+            </p>
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}>Language: </span>{elem.fields.langugage}
+            </p>
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}>Country: </span>{elem.fields.country}
+            </p>
+            <p className="movieDetailDescription"><span style={{color:'lightgrey'}}>Release date: </span>{elem.fields.releaseDate}
+            </p>
+        <p style={{color:"lightgrey", lineHeight:'1.5em'}}>{elem.fields.content.content[0].content[0].value}</p>
+
+          </div>
+         <hr />   
           </div>
           
        
-         
+     
       </div>
+      
       )
         }) : null}
 </div>
     )
 }
+
+const styles = {
+ 
+    backgroundColor: 'red',
+  
+};
 
 export default Chart;

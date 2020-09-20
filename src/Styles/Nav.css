@@ -1,23 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&effect=anaglyph');
+
 nav {
     margin-top: 0.25em;
     display:flex;
     justify-content: space-around;
-    height: 6vh;
+    position: fixed;
     align-items: center;
     color: white;
     list-style: none;
     text-decoration: none;
     font-size: 2em;
-    
+    top: 0;
+    width: 100%;
+    z-index: 1000000;
     
     
 }
 
 .navLink {
-    color:black;
+    color:white;
     text-decoration: none;
     font-size:1rem;
-    font-weight: lighter;
 }
 
 .navLink:hover 
@@ -31,5 +34,4 @@ nav {
     border:3px solid black;
     border-radius: 10%;
     font-weight: lighter;
-
 }
