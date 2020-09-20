@@ -56,10 +56,11 @@ color: #c39400;
     align-items: center;
     gap: 5em;
 
-}
+} 
 
-.titleFlexContainer .itemOne {
+ .titleFlexContainer .itemOne {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
@@ -67,12 +68,13 @@ color: #c39400;
 
 
 .titleFlexContainer p {
-    color:#136CB2;
+    color:red
 }
 .titleFlexContainer img {
 
-        width: calc(200px + 5vw);
-        height: calc(300px + 5vw);
+        width: calc(250px + 5vw);
+        height: calc(350px + 5vw);
+        margin-top: 1em;
    
 }
 
@@ -82,12 +84,25 @@ color: #c39400;
     align-items: center;
     
 }
+@media (max-width:600px){
+    .itemFlexContainer{
+        display: flex;
+        flex-direction: column;
+       
+    }
+}
 
 .itemFlexContainer {
-    margin-top: 0.5em;
+
     display: flex;
+    padding: 2em;  
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5716ca1427d4bd834e4a5452/1471310840111-GJWOJQI73JEO6MY78I5R/ke17ZwdGBToddI8pDm48kBuE2GvODXuyYE8UaryAMvR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kD6Ec8Uq9YczfrzwR7e2Mjw1uabqA6nQT0id-7Rt9SIPZxKGEGCRmvs9smSRVMl_g/BlueHaloGradient.jpg?format=2500w');
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: space-around;
     align-items: center;
+    filter:grayscale(30%);
+    /* filter: drop-shadow(80px 80px 100px #0e1d3a); */
    
 }
 
@@ -122,5 +137,16 @@ margin-left: 0.5em;
     display:flex;
     justify-content: space-around;
 }
+
+
+.movieDetails {
+    padding: 2em;
+}
+
+.movieDetailDescription {
+    color:rgba(224,189,189,1);
+}
+
+
 
 
