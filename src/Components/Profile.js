@@ -2,7 +2,7 @@ import React from 'react';
 import {useFetch}  from './Hooks';
 import '../Styles/Profile.css'
 import { AiFillStar } from "react-icons/ai";
-import { myFunction } from './Hooks';
+
 
 
 function Profile (){
@@ -12,7 +12,7 @@ function Profile (){
         <div className="profileContainer">
             {users.response ?  
             <div>  
-                <h2>Profile</h2>
+                <h2>User</h2>
                 <div className="profileDataTitle">
                    
                         <img src="https://www.phideltatheta.org/wp-content/uploads/2013/08/Roger_Ebert.jpg" alt="" />
@@ -82,6 +82,7 @@ function Profile (){
             <p>{users.response.includes.Entry[3].fields.content.content[0].content[0].value}</p>
                
             </div>
+         
             
             </div>
 

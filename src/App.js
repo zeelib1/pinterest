@@ -78,6 +78,7 @@ function Home (){
 //  console.log(movies)
 
   return(
+
       <div className="bodyHome">
          <section className="cinemaIntro"> 
           <p className='scroll special font-effect-anaglyph' data-rateX='1' data-rateY='0.7'>Cinemagram</p>
@@ -95,6 +96,7 @@ function Home (){
          {movies ? 
              movies.items.map((element) => {
               return (<div className="photoOne" key={element.sys.id}>
+
                 <img className="grow"  
                 src={`http://${element.imgUrl}`} 
                 alt={element.fields.name} />

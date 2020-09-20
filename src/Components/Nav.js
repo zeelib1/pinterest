@@ -13,7 +13,9 @@ function Nav (){
             </Link>
 
             <Link className="navLink" to='chart'>
+
              <li className="font-effect-anaglyph">Ratings</li>
+
             </Link>
             
             

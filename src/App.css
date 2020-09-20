@@ -8,6 +8,13 @@
   background-color: black;
 }
 
+
+#backgroundApp {
+  /* background-image: linear-gradient(to right,white,indigo,black); */
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+  
+}
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -17,7 +24,13 @@
   
 }
 
+.photo {
+  display: grid;
+}
+
+
 .gridContainer img {
+  
   width: 220px;
   height: 330px;
   border-radius: 10%;
@@ -26,16 +39,19 @@
   display: flex;
   justify-content: center;
   gap: 0.75em;
+
   margin-bottom: 4.30em;
   margin-top: 0;
+
 }
 
 .homeForm input {
 width: 80vw;
 padding:1em;
-/* margin: 1em; */
+margin: 1em;
 border: 2px solid lightgrey;
 border-radius: 10px;
+
 }
 
 .homeForm button {
@@ -45,10 +61,12 @@ border-radius: 10px;
   color: white;
   padding: 0.5em 2em;
   font-size: 1rem;
+  margin: 1em;
 }
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
+
 
 .cameraIcon { 
   height: 8vh; 
@@ -116,3 +134,4 @@ border-radius: 10px;
 .special {
   font-family: 'Dancing Script'
 }
+
