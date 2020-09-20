@@ -5,15 +5,17 @@ function Nav (){
     return(
         <nav>
             <Link className="navLink" to='/'>
-             <li className="homeNavigationLink">Home</li>
+             <li className="homeNavigationLink font-effect-anaglyph">Home</li>
             </Link>
 
             <Link className="navLink" to='/profile'>
-             <li>Profile</li>
+             <li className="font-effect-anaglyph">Profile</li>
             </Link>
 
             <Link className="navLink" to='chart'>
-             <li>Top Rated</li>
+
+             <li className="font-effect-anaglyph">Ratings</li>
+
             </Link>
             
             

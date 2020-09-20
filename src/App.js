@@ -93,12 +93,18 @@ function Home (){
          </form>
          <div className="gridContainer">
          {movies ? 
-             movies.items.map((element) => {
+             movies.items.map((element, index) => {
+          
+              
               return (<div className="photoOne" key={element.sys.id}>
-                <img className="grow"  
+                
+                <img className={`grow ${index % 3 === 0 ? "one" :  index % 2 === 0 || index %5 ? "two" : " "}`} 
                 src={`http://${element.imgUrl}`} 
                 alt={element.fields.name} />
-                </div>)
+            
+                </div>
+                
+                )
                 ;}) 
             : null} 
         </div>
